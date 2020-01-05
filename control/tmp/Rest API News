@@ -1,0 +1,26 @@
+Rest API News
+
+https://newsapi.org/v2/top-headlines?country=id&apiKey=4348f4cb884b457e940c0b783acd5da4
+
+
+<?php
+
+require 'control/Function.php';
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, 'https://newsapi.org/v2/top-headlines?country=id&apiKey=4348f4cb884b457e940c0b783acd5da4');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec($curl);
+curl_close($curl);
+
+$result     = json_decode($result, true);
+$dumpBerita = $result['articles']['0'];
+
+$beritaGambar = $result['articles']['0']['urlToImage'];
+$title        = $result['articles']['0']['title'];
+$description  = $result['articles']['0']['description'];
+$linkBerita   = $result['articles']['0']['url'];
+$penulis      = $result['articles']['0']['author'];
+$published    = $result['articles']['0']['publishedAt'];
+
+?>

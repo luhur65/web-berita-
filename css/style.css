@@ -1,0 +1,32 @@
+.card {
+	opacity: 0;
+	transform: translate(0,-40px);
+	transition: .5s;
+}
+
+.card.muncul {
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+h1 {
+	opacity: 0;
+	transform: translate(100px,0);
+	transition: 1s;
+}
+
+h1.muncul {
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+.h5 {
+	opacity: 0;
+	transform: translate(-100px,0);
+	transition: 1s;
+}
+
+.h5.muncul {
+	opacity: 1;
+	transform: translate(0,0);
+}
